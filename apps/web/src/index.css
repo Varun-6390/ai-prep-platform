@@ -108,3 +108,35 @@
   mask-composite: exclude;
   pointer-events: none;
 }
+
+/* Minimalist Modern Utilities */
+@layer utilities {
+  .gradient-text {
+    background: linear-gradient(to right, theme('colors.m-accent'), theme('colors.m-accent-secondary'));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .gradient-underline {
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    height: 0.75rem;
+    width: 100%;
+    border-radius: 0.125rem;
+    background: linear-gradient(to right, rgba(0, 82, 255, 0.15), rgba(77, 124, 255, 0.1));
+  }
+  
+  @media (min-width: 768px) {
+    .gradient-underline {
+      bottom: -0.5rem;
+      height: 1rem;
+    }
+  }
+
+  .texture-dots {
+    background-image: radial-gradient(circle, white 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+}

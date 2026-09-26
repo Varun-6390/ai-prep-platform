@@ -54,7 +54,17 @@ export default {
         "on-tertiary-fixed": "#002113",
         "on-primary-fixed-variant": "#0038b6",
         "inverse-on-surface": "#f0effe",
-        "error": "#ba1a1a"
+        "error": "#ba1a1a",
+        "m-background": "#FAFAFA",
+        "m-foreground": "#0F172A",
+        "m-muted": "#F1F5F9",
+        "m-muted-foreground": "#64748B",
+        "m-accent": "#0052FF",
+        "m-accent-secondary": "#4D7CFF",
+        "m-accent-foreground": "#FFFFFF",
+        "m-border": "#E2E8F0",
+        "m-card": "#FFFFFF",
+        "m-ring": "#0052FF"
       },
       borderRadius: {
         "DEFAULT": "0.5rem",
@@ -85,7 +95,10 @@ export default {
         "h1": ["Manrope", "sans-serif"],
         "body-sm": ["Inter", "sans-serif"],
         "button": ["Inter", "sans-serif"],
-        "body-lg": ["Inter", "sans-serif"]
+        "body-lg": ["Inter", "sans-serif"],
+        "m-display": ["Calistoga", "Georgia", "serif"],
+        "m-body": ["Inter", "system-ui", "sans-serif"],
+        "m-mono": ["JetBrains Mono", "monospace"]
       },
       fontSize: {
         "label-caps": ["12px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
@@ -96,6 +109,14 @@ export default {
         "body-sm": ["14px", { "lineHeight": "1.5", "fontWeight": "400" }],
         "button": ["16px", { "lineHeight": "1.0", "fontWeight": "500" }],
         "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+      },
+      boxShadow: {
+        "m-sm": "0 1px 3px rgba(0,0,0,0.06)",
+        "m-md": "0 4px 6px rgba(0,0,0,0.07)",
+        "m-lg": "0 10px 15px rgba(0,0,0,0.08)",
+        "m-xl": "0 20px 25px rgba(0,0,0,0.1)",
+        "m-accent": "0 4px 14px rgba(0,82,255,0.25)",
+        "m-accent-lg": "0 8px 24px rgba(0,82,255,0.35)",
       }
     },
   },
