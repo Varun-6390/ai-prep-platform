@@ -1,0 +1,25 @@
+const express = require("express");
+const cookieParser = require("cookie-parser");
+const cors = require("cors");
+const helmet = require("helmet");
+const { apiRateLimiter } = require("./middleware/rateLimit.middleware");
+const { requestId, requestLogger } = require("./middleware/request.middleware");
+const { notFound, errorHandler } = require("./middleware/error.middleware");
+const authRouter = require("./routes/auth.routes");
+const interviewRouter = require("./routes/interview.routes");
+
+const app = express();
+app.set("trust proxy", 1);
+app.use(helmet());
+app.use(requestId);
+app.use(requestLogger);
+app.use(cors({ origin: process.env.CLIENT_URL || "http://localhost:5173", credentials: true }));
+app.use(express.json({ limit: "1mb" }));
+app.use(cookieParser());
+app.use(apiRateLimiter);
+app.get("/health", (req, res) => res.json({ status: "ok", service: "ai-prep-api", requestId: req.id }));
+app.use("/api/auth", authRouter);
+app.use("/api/interview", interviewRouter);
+app.use(notFound);
+app.use(errorHandler);
+module.exports = app;

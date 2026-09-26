@@ -1,0 +1,10 @@
+const express = require("express");
+const controller = require("../controllers/interview.controller");
+const { authUser } = require("../middleware/auth.middleware");
+const upload = require("../middleware/file.middleware");
+const router = express.Router();
+router.post("/", authUser, upload.single("resume"), controller.generateReport);
+router.get("/", authUser, controller.getAllReports);
+router.get("/report/:interviewId", authUser, controller.getReportById);
+router.post("/resume/pdf/:interviewReportId", authUser, controller.downloadResume);
+module.exports = router;

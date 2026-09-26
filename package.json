@@ -1,0 +1,18 @@
+{
+  "name": "ai-prep-platform",
+  "private": true,
+  "version": "2.0.0",
+  "description": "Production-oriented AI interview preparation platform with RAG, Redis caching and structured LLM workflows.",
+  "workspaces": ["apps/*", "packages/*"],
+  "scripts": {
+    "dev": "concurrently \"npm run dev -w @ai-prep/api\" \"npm run dev -w @ai-prep/web\"",
+    "dev:api": "npm run dev -w @ai-prep/api",
+    "dev:web": "npm run dev -w @ai-prep/web",
+    "build": "npm run build -w @ai-prep/web",
+    "lint": "npm run lint -w @ai-prep/web",
+    "start": "npm run start -w @ai-prep/api"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1"
+  }
+}
